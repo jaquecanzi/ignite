@@ -1,4 +1,3 @@
-import { log } from 'console'
 import http from 'http'
 
 const users = []
@@ -19,11 +18,11 @@ const server = http.createServer((req, res) => {
             name: "Jaqueline"
         })
         console.log(users);
-        return res.end('Criado')
+        return res.writeHead(201).end()
     }
 
 
-    res.end('Hello ignite')
+    res.writeHead(404).end('NOT FOUND')
 })
 
 server.listen(3333)
